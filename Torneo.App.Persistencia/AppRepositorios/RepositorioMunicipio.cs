@@ -4,7 +4,7 @@ namespace Torneo.App.Persistencia
 {
     public class RepositorioMunicipio : IRepositorioMunicipio
     {
-        private readonly DataContext _dataContex = new DataContext();
+        private readonly DataContext _dataContext = new DataContext();
 
         public Municipio AddMunicipio(Municipio municipio)
         {
