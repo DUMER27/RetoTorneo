@@ -7,15 +7,28 @@ namespace Torneo.App.Consola
         private static IRepositorioMunicipio _repoMunicipio = new RepositorioMunicipio();
         static void Main(string[] args)
         {
-            AddMunicipio();
-
+            int opcion = 0;
+            do
+            {
+                Console.WriteLine("1 Insertar Municipo");
+                Console.WriteLine("0 Salir");
+                opcion = Int32.Parse(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        AddMunicipio();
+                        break;
+                }
+            } while (opcion !=0);
         }
 
         private static void AddMunicipio()
         {
+            Console.WriteLine("Ingrese el nombre del municipio");
+            string nombre = Console.ReadLine();
             var municipio = new Municipio
             {
-                Nombre = "Manizales",
+                Nombre = nombre,
             };
             _repoMunicipio.AddMunicipio(municipio);
         }
