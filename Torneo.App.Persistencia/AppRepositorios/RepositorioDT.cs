@@ -11,5 +11,9 @@ namespace Torneo.App.Persistencia
             _dataContext.SaveChanges();
             return dtInsertado.Entity;
         }
+        public IEnumerable<DirectorTecnico> GetAllDirectoresTecnicos()
+        {
+            return _dataContext.DirectoresTecnicos;
+        }
     }
 }
