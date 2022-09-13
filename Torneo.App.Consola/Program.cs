@@ -167,7 +167,7 @@ namespace Torneo.App.Consola
         private static void AddPartido()
         {
             Console.WriteLine("Ingrese la fecha");
-            DateTime fechahora = DateTime.Parse(Console.ReadLine());
+            DateTime fechaHora = DateTime.Parse(Console.ReadLine());
             GetAllEquipos();
             Console.WriteLine("Ingrese el ID del equipo Local");
             int LocalEquipoid = Int32.Parse(Console.ReadLine());
@@ -179,10 +179,10 @@ namespace Torneo.App.Consola
             Console.WriteLine("Ingrese el Marcador del Visitante");
             int MarcadorVisitante = Int32.Parse(Console.ReadLine());
             var partido = new Partido
-            { 
-
+            {
+                FechaHora = fechaHora,
             };
-            _repoPartido.AddPartido (partido, fechahora, LocalEquipoid, MarcadorLocal, VisitanteEquipoid, MarcadorVisitante);
+            _repoPartido.AddPartido (partido, fechaHora, LocalEquipoid, MarcadorLocal, VisitanteEquipoid, MarcadorVisitante);
         }
 
         private static void GetAllMunicipios()
