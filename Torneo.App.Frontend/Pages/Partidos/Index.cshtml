@@ -9,15 +9,22 @@
             <th scope="col">Id</th>
             <th scope="col">Local</th>
             <th scope="col">Visitante</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var partido in Model.partidos)
+        @foreach (var partido in Model.partidos)
         {
             <tr>
                 <th scope="row">@partido.Id</th>
                 <td>@partido.Local.Nombre</td>
                 <td>@partido.Visitante.Nombre</td>
+                <td>
+                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@partido.Id">
+                        Detalle
+                    </a>
+                </td>
+
             </tr>
         }
     </tbody>

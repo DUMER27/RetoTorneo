@@ -1,0 +1,16 @@
+﻿@page
+@model Torneo.App.Frontend.Pages.Partidos.DetailsModel
+@{
+}
+<h1>Detalle del partido</h1>
+<table class="table table-striped">
+    <tr>
+        <th scope="col">Id</th>
+        <td>@Model.partido.Id</td>
+    </tr>
+    <tr>
+        <th scope="col">Marcador local</th>
+        <td>@Model.partido.MarcadorLocal</td>
+    </tr>
+</table>
+<a class="btn btn-success" asp-page="./Index">Volver</a>

@@ -3,19 +3,33 @@
 @{
 }
 <h1>Lista de Municipios</h1>
+<title>cambiar tipo de letra</title>
+<style>
+        h1{
+            font-family: fantasy;
+            color: green;
+        }
+</style>
+
 <table class="table table-success table-striped">
     <thead>
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var municipio in Model.municipios)
+        @foreach (var municipio in Model.municipios)
         {
             <tr>
                 <th scope="row">@municipio.Id</th>
                 <td>@municipio.Nombre</td>
+                <td>
+                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@municipio.Id">
+                        Detalle
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

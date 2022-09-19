@@ -27,5 +27,16 @@ namespace Torneo.App.Persistencia
 
             return jugador;
         }
+        public Jugador GetJugador(int idJugador)
+        {
+            var jugadorEncontrado = _dataContext.Jugadores
+            .Where(e => e.Id == idJugador)
+            .Include(e => e.Posicion)
+            .Include(e => e.Equipo)
+            .FirstOrDefault();
+            return jugadorEncontrado;
+
+        }
+
     }
 }

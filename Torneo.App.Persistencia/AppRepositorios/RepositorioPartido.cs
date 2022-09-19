@@ -30,5 +30,16 @@ namespace Torneo.App.Persistencia
 
             return Partidos;
         }
+        public Partido GetPartido(int idPartido)
+        {
+            var partidoEncontrado = _dataContext.Partidos
+            .Where(e => e.Id == idPartido)
+            .Include(e => e.MarcadorLocal)
+            .Include(e => e.MarcadorVisitante)
+            .Include(e => e.FechaHora)
+            .FirstOrDefault();
+            return partidoEncontrado;
+
+        }
     }
 }

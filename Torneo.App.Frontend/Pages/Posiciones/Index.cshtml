@@ -8,17 +8,21 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var posicion in Model.posiciones)
+        @foreach (var posicion in Model.posiciones)
         {
             <tr>
                 <th scope="row">@posicion.Id</th>
                 <td>@posicion.Nombre</td>
+                <td>
+                    <a class="btn btn-success" asp-page="./Details" asp-route-id="@posicion.Id">
+                        Detalle
+                    </a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
-
-
