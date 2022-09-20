@@ -9,6 +9,7 @@
             <th scope="col">Id</th>
             <th scope="col">Local</th>
             <th scope="col">Visitante</th>
+            <th scope="col">Fecha</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
                 <th scope="row">@partido.Id</th>
                 <td>@partido.Local.Nombre</td>
                 <td>@partido.Visitante.Nombre</td>
+                <td>@partido.FechaHora</td>
                 <td>
                     <a class="btn btn-success" asp-page="./Details" asp-route-id="@partido.Id">
                         Detalle
