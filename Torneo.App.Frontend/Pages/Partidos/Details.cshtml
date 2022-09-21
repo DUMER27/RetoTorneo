@@ -3,6 +3,13 @@
 @{
 }
 <h1>Detalle del partido</h1>
+<title>cambiar tipo de letra</title>
+<style>
+        h1{
+            font-family: fantasy;
+            color: green;
+        }
+</style>
 <table class="table table-striped">
     <tr>
         <th scope="col">Id</th>
@@ -15,6 +22,10 @@
     <tr>
         <th scope="col">Marcador visitante</th>
         <td>@Model.partido.MarcadorVisitante</td>
+    </tr>
+    <tr>
+        <th scope="col">Fecha</th>
+        <td>@Model.partido.FechaHora</td>
     </tr>
 </table>
 <a class="btn btn-success" asp-page="./Index">Volver</a>

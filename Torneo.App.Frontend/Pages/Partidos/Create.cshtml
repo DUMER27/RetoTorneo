@@ -2,3 +2,16 @@
 @model Torneo.App.Frontend.Pages.Partidos.CreateModel
 @{
 }
+<h1>Nuevo partido</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="partido.Local"></label>
+        <input asp-for="partido.Local" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="partido.Visitante"></label>
+        <input asp-for="partido.Visitante" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Crear partido</button>
+</form>
+<a class="btn btn-success" asp-page="./Index">Volver</a>
