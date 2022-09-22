@@ -29,10 +29,19 @@ namespace Torneo.App.Frontend.Pages.Jugadores
             equipos = _repoEquipo.GetAllEquipos();
             posiciones = _repoPosicion.GetAllPosiciones();
         }
+        
         public IActionResult OnPost(Jugador jugador, int idEquipo, int idPosicion)
         {
-            _repoJugador.AddJugador(jugador, idEquipo, idPosicion);
-            return RedirectToPage("Index");
+            if (ModelState.IsValid)
+            {
+                _repoJugador.AddJugador(jugador, idEquipo, idPosicion);
+                return RedirectToPage("Index");
+            }
+            else
+            {
+                return RedirectToPage("Create");
+            }
         }
+
     }
 }
