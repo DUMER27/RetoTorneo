@@ -39,7 +39,9 @@ namespace Torneo.App.Frontend.Pages.Jugadores
             }
             else
             {
-                return RedirectToPage("Create");
+                equipos = _repoEquipo.GetAllEquipos();
+                posiciones = _repoPosicion.GetAllPosiciones();
+                return Page();
             }
         }
 
